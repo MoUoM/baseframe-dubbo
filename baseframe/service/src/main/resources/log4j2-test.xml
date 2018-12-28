@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="off">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <!-- myibatis log configure -->
+        <logger name="com.apache.ibatis" level="DEBUG"/>
+        <logger name="org.mybatis.spring" level="DEBUG"/>
+        <logger name="java.sql.Connection" level="DEBUG"/>
+        <logger name="java.sql.Statement" level="DEBUG"/>
+        <logger name="java.sql.PreparedStatement" level="DEBUG"/>
+        
+        <!-- 减少部分debug日志 -->
+        <logger name="druid.sql" level="DEBUG"/>
+        <logger name="org.mybatis.spring" level="INFO"/>
+        <logger name="org.springframework" level="INFO"/>
+        <logger name="com.baomidou.mybatisplus" level="INFO"/>
+        <logger name="org.apache.ibatis.io" level="INFO"/>
+        
+        <!-- cache debug -->
+        <logger name="net.sf.ehcache" level="DEBUG"/>
+        <logger name="org.springframework.cache" level="ALL"/>
+
+        <!-- 业务debug日志 -->
+        <logger name="com.xm.xmap1702043" level="DEBUG"/>
+        
+        <Root level="debug">
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+</Configuration>
